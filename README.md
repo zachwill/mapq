@@ -13,6 +13,9 @@ Installation
 Usage
 -----
 
+```python
 >>> from mapq import Geo
 >>> g = Geo('my_api_key')
+
 >>> g.address('123 Any Street')
+```
