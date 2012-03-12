@@ -10,7 +10,7 @@ except ImportError:
 
 setup(
     name="mapq",
-    version="0.2",
+    version="0.2.1",
     url="http://github.com/zachwill/mapq",
     author="Zach Williams",
     author_email="hey@zachwill.com",
