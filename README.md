@@ -21,7 +21,7 @@ Usage
 [{'lots': {'of': 'results'}}, ...]
 
 >>> g.reverse(37.775002, -122.418297)
-{'looks': {'like': '155 9th St San Francisco, CA'}}
+{'looks': {'like': '155 9th St'}}
 
 >>> g.latlng('155 9th St San Francisco, CA')
 {'lat': 37.775002, 'lng': -122.418297}
