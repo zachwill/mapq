@@ -18,6 +18,11 @@ Usage
 >>> g = Geo('my_api_key')
 
 >>> g.address('155 9th St San Francisco, CA')
+[{'lots': {'of': 'results'}}, ...]
 
->>> g.reverse(40.0378, -76.305801)
+>>> g.reverse(37.775002, -122.418297)
+{'looks': {'like': '155 9th St San Francisco, CA'}}
+
+>>> g.latlng('155 9th St San Francisco, CA')
+{'lat': 37.775002, 'lng': -122.418297}
 ```
