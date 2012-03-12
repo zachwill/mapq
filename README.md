@@ -17,5 +17,7 @@ Usage
 >>> from mapq import Geo
 >>> g = Geo('my_api_key')
 
->>> g.address('123 Any Street')
+>>> g.address('155 9th St San Francisco, CA')
+
+>>> g.reverse(40.0378, -76.305801)
 ```

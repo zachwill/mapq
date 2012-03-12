@@ -24,14 +24,42 @@ class Geo(object):
 
     def get(self, path, **kwargs):
         """Perform a get request."""
+        if 'key' not in kwargs and 'api_key' not in kwargs:
+            kwargs['key'] = self.api_key
         url = '/'.join((self.endpoint, path))
-        kwargs['key'] = self.api_key
         request = req.get(url, params=kwargs)
         self.request = request
         results = loads(request.text)['results']
         return results
 
     def address(self, name, **kwargs):
-        """Geocode an address."""
+        """
+        Geocode an address.
+
+        >>> Geo().address('155 9th St San Francisco, CA')
+        """
         kwargs['location'] = name
-        return self.get('address', **kwargs)
+        results = self.get('address', **kwargs)
+        locations = results[0]['locations']
+        return locations
+
+    def reverse(self, lat, lng, **kwargs):
+        """
+        Reverse geocode latitude and longitude coordinates.
+
+        >>> Geo().reverse(37.775002, -122.418297)
+        """
+        kwargs['lat'] = lat
+        kwargs['lng'] = lng
+        return self.get('reverse', **kwargs)
+
+    def latlng(self, address, **kwargs):
+        """
+        Return the first pair of latitude and longitude coordinates for a
+        given address.
+
+        >>> Geo().latlng('155 9th St San Francisco, CA')
+        """
+        results = self.address(address, **kwargs)
+        location = results[0]['displayLatLng']
+        return location
