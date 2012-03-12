@@ -5,6 +5,8 @@ Documentation:  http://www.mapquestapi.com/geocoding/
 """
 
 import os
+from urllib import unquote
+
 import requests as req
 from simplejson import loads
 
@@ -13,14 +15,17 @@ class Geo(object):
     """A simple Mapquest Geocoding API wrapper."""
 
     def __init__(self, api_key=None):
+        self._set_key(api_key)
+        self.endpoint = "http://www.mapquestapi.com/geocoding/v1"
+
+    def _set_key(self, api_key):
+        """Configure the instance's Mapquest API key."""
         if not api_key:
             if 'MAPQUEST_API_KEY' in os.environ:
-                self.api_key = os.environ['MAPQUEST_API_KEY']
+                api_key = os.environ['MAPQUEST_API_KEY']
             else:
-                self.api_key = ''
-        else:
-            self.api_key = api_key
-        self.endpoint = "http://www.mapquestapi.com/geocoding/v1"
+                api_key = ''
+        self.api_key = unquote(api_key)
 
     def get(self, path, **kwargs):
         """Perform a get request."""
