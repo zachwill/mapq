@@ -3,6 +3,8 @@ mapq
 
 An easy-to-use wrapper for the [Mapquest Geocoding API](http://www.mapquestapi.com/geocoding/).
 
+Make sure to register for [Mapquest API key](http://developer.mapquest.com/).
+
 
 Installation
 ------------
