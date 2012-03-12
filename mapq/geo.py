@@ -43,6 +43,11 @@ class Geo(object):
         locations = results[0]['locations']
         return locations
 
+    def batch(self, *locations, **kwargs):
+        """Batch geolocate a number of addresses."""
+        kwargs['location'] = locations
+        return self.get('batch', **kwargs)
+
     def reverse(self, lat, lng, **kwargs):
         """
         Reverse geocode latitude and longitude coordinates.
