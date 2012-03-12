@@ -43,7 +43,7 @@ There are two ways of interacting with `mapq`'s API.
 {'lat': 37.775002, 'lng': -122.418297}
 ```
 
-You can also use the Mapquest API without interacting with the `Geo`
+Alternatively, you can also use the Mapquest API without interacting with the `Geo`
 class.
 
 **NOTE**: Your `MAPQUEST_API_KEY` environment variable will need to be
@@ -55,7 +55,7 @@ set.
 >>> mapq.address('155 9th St San Francisco, CA')
 [{'lots': {'of': 'results'}}, ...]
 
->>> mapq.batch('94103', '1 Infinity Loop Cupertino, CA')
+>>> mapq.batch('94103', '1 Infinity Loop Cupertino', 'Yerba Buena Park')
 [{'multiple': 'locations'}, ...]
 
 >>> mapq.geocode('155 9th St San Francisco, CA')
