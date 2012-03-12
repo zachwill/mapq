@@ -15,6 +15,11 @@ def batch(*locations):
     return Geo().batch(*locations)
 
 
+def geocode(address):
+    """Return first the geocode result for a given address."""
+    return Geo().address(address)[0]
+
+
 def latlng(address):
     """Get the latitude and longitude coordinates for an address."""
     return Geo().latlng(address)

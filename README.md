@@ -56,6 +56,9 @@ set.
 >>> mapq.batch('94103', '1 Infinity Loop Cupertino, CA')
 [{'multiple': 'locations'}, ...]
 
+>>> mapq.geocode('155 9th St San Francisco, CA')
+{'single': {'geocode': 'result'}}
+
 >>> mapq.reverse(37.775002, -122.418297)
 {'looks': {'like': '155 9th St'}}
 

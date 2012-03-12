@@ -1,2 +1,2 @@
-from .core import address, batch, latlng, reverse
+from .core import address, batch, geocode, latlng, reverse
 from .geo import Geo
