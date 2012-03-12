@@ -44,6 +44,8 @@ There are two ways of interacting with `mapq`'s API.
 You can also use the Mapquest API without interacting with the `Geo`
 class.
 
+**NOTE**: Your `MAPQUEST_API_KEY` environment variable will need to be
+set.
 
 ```python
 >>> import mapq
