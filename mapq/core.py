@@ -1,8 +1,13 @@
 """
 Simplified methods for calling Mapquest's Geocoding API.
 """
-
+import os
 from .geo import Geo
+
+
+def key(api_key):
+    """Set the API key as an environment variable."""
+    os.environ['MAPQUEST_API_KEY'] = api_key
 
 
 def address(name, **kwargs):
