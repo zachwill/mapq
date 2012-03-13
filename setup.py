@@ -8,13 +8,39 @@ except ImportError:
     from distutils.core import setup
 
 
+long_description = """
+Interacting with the Mapquest Geocoding API should be easy.
+
+    >>> import mapq
+
+    >>> mapq.key('my_api_key')
+
+    >>> mapq.address('155 9th St San Francisco, CA')
+    [{'lots': {'of': 'results'}}, ...]
+
+    >>> mapq.batch('94103', '1 Infinity Loop Cupertino', 'Yerba Buena Park')
+    [{'multiple': 'locations'}, ...]
+
+    >>> mapq.geocode('155 9th St San Francisco, CA')
+    {'single': {'geocode': 'result'}}
+
+    >>> mapq.reverse(37.775002, -122.418297)
+    {'looks': {'like': '155 9th St'}}
+
+    >>> mapq.latlng('155 9th St San Francisco, CA')
+    {'lat': 37.775002, 'lng': -122.418297}
+"""
+
+
 setup(
     name="mapq",
-    version="0.2.2",
+    version="0.3",
     url="http://github.com/zachwill/mapq",
     author="Zach Williams",
     author_email="hey@zachwill.com",
+    keywords=['mapquest', 'geocoding', 'google maps', 'geocode'],
     description="An easy-to-use Mapquest Geocoding API wrapper.",
+    long_description=long_description,
     packages=[
         'mapq'
     ],
