@@ -6,9 +6,11 @@ import os
 from .geo import Geo
 
 
-def key(api_key):
+def key(api_key=None):
     """Set the API key as an environment variable."""
-    os.environ['MAPQUEST_API_KEY'] = api_key
+    if api_key:
+        os.environ['MAPQUEST_API_KEY'] = api_key
+    return os.environ['MAPQUEST_API_KEY']
 
 
 def address(name, **kwargs):
