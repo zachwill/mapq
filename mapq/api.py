@@ -1,6 +1,7 @@
 """
 Simplified methods for calling Mapquest's Geocoding API.
 """
+
 import os
 from .geo import Geo
 
